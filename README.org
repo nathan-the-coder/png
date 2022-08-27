@@ -6,33 +6,29 @@
 2. [[https://sourceforge.net/projects/gcc-win64][gcc]] or [[https://sourceforge.net/projects/mingw-w64][mingw-w64]]
 *** Linux
 **** Arch Linux
+# feh -> it is used to view png file using `make view`
+# libpng -> it is the library used to generate images
+# gcc -> it is the C/C++ cross-platform compiler
+
 #+BEGIN_SRC shell
-sudo pacman -S libpng gcc # for gcc and libpng
+sudo pacman -S libpng gcc feh
 #+END_SRC
 **** Debian Linux
+# feh -> it is used to view png file using `make view`
+# libpng-dev -> it is the library development files for libpng on debian
+# gcc -> it is the C/C++ cross-platform compiler
+
 #+BEGIN_SRC  shell
-sudo apt-get install libpng-dev gcc
+sudo apt-get install libpng-dev gcc feh
 #+END_SRC
 
 * Customizing
-1. You can change the image width and height variable to your liking.
-#+BEGIN_SRC c
-/*...*/
-int main() {
-  bitmap_t image;
-  int x;
-  int y;
-  int status;
+#+BEGIN_SRC shell
+# You can change the image width and height using:
+# ./bin/{Debug,Release}/make_png [width] [height]
 
-  status = 0;
-
-  /* Creating the image */
-
-  image.width = 200;
-  image.height = 300;
-
-  /*...*/
-}
+# Ex: this will generate image with the width of '100' and height of '100'
+./bin/Release/make_png 100 100
 #+END_SRC
 
 * Example

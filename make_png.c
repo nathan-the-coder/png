@@ -2,6 +2,11 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
+#include <limits.h>
+
+#include <string.h>
+
 
 /* A coloured pixel */
 
@@ -129,18 +134,20 @@ static int pix(int value, int max) {
   return (int)(256.0 * ((double)(value) / (double)max));
 }
 
-int main() {
+int main(int argc, char *argv[]) {
   bitmap_t image;
   int x;
   int y;
   int status;
 
+  char *p;
+
   status = 0;
 
   /* Creating the image */
 
-  image.width = 200;
-  image.height = 300;
+  image.width = strtol(argv[1], &p, 10);
+  image.height = strtol(argv[2], &p, 10);
 
   image.pixels = calloc(image.width * image.height, sizeof(pixel_t));
 
@@ -151,14 +158,19 @@ int main() {
   for (y = 0; y < image.height; y++) {
     for (x = 0; x < image.width; x++) {
       pixel_t *pixel = pixel_at(&image, x, y);
+      /*
+       * This will generate random images.
+       * pixel->red = (rand() % (0 - image.width + 1)) + image.width;
+       * pixel->green = (rand() % (0 - image.height + 1)) + image.height;
+       */
       pixel->red = pix(x, image.width);
       pixel->green = pix(y, image.height);
     }
   }
 
-  /* Writing the image to a file 'image.png'. */
+  /* Writing the image to a file 'example.png'. */
 
-  if (save_png_to_file(&image, "image.png")) {
+  if (save_png_to_file(&image, "example.png")) {
     fprintf(stderr, "Error writing file.\n");
     status = -1;
   }
