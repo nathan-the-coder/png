@@ -26,4 +26,6 @@ int main() {
 #+END_SRC
 
 * Example
-1. This is the image created using libpng in C:  [[example.png]]
+1. This is the image created using libpng in C:
+
+[[example.png]]
