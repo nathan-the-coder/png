@@ -1,8 +1,18 @@
 #+title:  Image Generator in C
 
 * Requirements
+** Windows
 1. [[https://sourceforge.net/projects/libpng][libpng]]
 2. [[https://sourceforge.net/projects/gcc-win64][gcc]] or [[https://sourceforge.net/projects/mingw-w64][mingw-w64]]
+** Linux
+*** Arch Linux
+#+BEGIN_SRC shell
+sudo pacman -S libpng gcc # for gcc and libpng
+#+END_SRC
+*** Debian Linux
+#+BEGIN_SRC  shell
+sudo apt-get install libpng-dev gcc
+#+END_SRC
 
 * Customizing
 1. You can change the image width and height variable to your liking.
