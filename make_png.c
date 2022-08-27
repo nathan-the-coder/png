@@ -146,8 +146,8 @@ int main(int argc, char *argv[]) {
 
   /* Creating the image */
 
-  image.width = strtol(argv[1], &p, 10);
-  image.height = strtol(argv[2], &p, 10);
+  image.width = strtol(argv[2], &p, 10);
+  image.height = strtol(argv[4], &p, 10);
 
   image.pixels = calloc(image.width * image.height, sizeof(pixel_t));
 
@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
 
   /* Writing the image to a file 'example.png'. */
 
-  if (save_png_to_file(&image, "example.png")) {
+  if (save_png_to_file(&image, argv[6])) {
     fprintf(stderr, "Error writing file.\n");
     status = -1;
   }
