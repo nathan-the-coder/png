@@ -1,6 +1,6 @@
 #+title:  Image Generator in C
 
-* Requirements
+** Requirements
 *** Windows
 1. [[https://sourceforge.net/projects/libpng][libpng]]
 2. [[https://sourceforge.net/projects/gcc-win64][gcc]] or [[https://sourceforge.net/projects/mingw-w64][mingw-w64]]
