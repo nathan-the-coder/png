@@ -1,0 +1,29 @@
+#+title:  Image Generator in C
+
+* Requirements
+1. [[https://sourceforge.net/projects/libpng][libpng]]
+2. [[https://sourceforge.net/projects/gcc-win64][gcc]] or [[https://sourceforge.net/projects/mingw-w64][mingw-w64]]
+
+* Customizing
+1. You can change the image width and height variable to your liking.
+#+BEGIN_SRC c
+/*...*/
+int main() {
+  bitmap_t image;
+  int x;
+  int y;
+  int status;
+
+  status = 0;
+
+  /* Creating the image */
+
+  image.width = 200;
+  image.height = 300;
+
+  /*...*/
+}
+#+END_SRC
+
+* Example
+1. This is the image created using libpng in C:  [[example.png]]
