@@ -1,15 +1,15 @@
 #+title:  Image Generator in C
 
 * Requirements
-** Windows
+*** Windows
 1. [[https://sourceforge.net/projects/libpng][libpng]]
 2. [[https://sourceforge.net/projects/gcc-win64][gcc]] or [[https://sourceforge.net/projects/mingw-w64][mingw-w64]]
-** Linux
-*** Arch Linux
+*** Linux
+**** Arch Linux
 #+BEGIN_SRC shell
 sudo pacman -S libpng gcc # for gcc and libpng
 #+END_SRC
-*** Debian Linux
+**** Debian Linux
 #+BEGIN_SRC  shell
 sudo apt-get install libpng-dev gcc
 #+END_SRC
