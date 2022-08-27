@@ -29,4 +29,4 @@ int main() {
 1. This is the image created using libpng in C:
 
 
-     [[example.png]]
+[[example.png]]
